@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    .bg-image {
+        background: url("{% static 'image/log.jpeg' %}") no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="bg-image">
+    <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
+        <div class="text-center">
+            <img src="{% static 'image/mmustlogo.png' %}" alt="Logo" class="img-fluid mb-3" width="100">
+            <h2 class="mb-4">Register New Applicant</h2>
+        </div>
+
+        <!-- Bootstrap Alerts for Messages -->
+        {% if messages %}
+        <div class="mt-2">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Registration Form -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="regNumber" class="form-label">Registration Number</label>
+                <input type="text" class="form-control" id="regNumber" placeholder="SIT/B/01-XXXXX/2022"
+                       name="reg_number" required pattern="SIT/B/01-\d{5}/\d{4}"
+                       title="Format: SIT/B/01-XXXXX/YYYY (e.g., SIT/B/01-55559/2022)">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="User-Email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Full Name" name="full_name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Create Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create New Password" name="password1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="password2" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

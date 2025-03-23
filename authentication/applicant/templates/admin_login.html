@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block content %}
+<style>
+    /* Full-page background image */
+    .bg-image {
+        background: url("{% static 'image/login.jpeg' %}") no-repeat center center;
+        background-size: cover;
+        height: 100vh; /* Full height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="bg-image">
+    <div class="card shadow-lg p-4 text-center" style="max-width: 400px; width: 100%;">
+        <!-- Logo -->
+        <div class="text-center mb-3">
+            <img src="{% static 'image/mmustlogo.png' %}" alt="Logo" class="img-fluid" style="max-width: 120px;">
+        </div>
+
+        <h2 class="mb-3">Admin Login</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="adminEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="adminEmail" placeholder="Enter your email" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="adminPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="adminPassword" placeholder="Enter your password" name="password" required>
+            </div>
+
+            <!-- Forgot Password Link -->
+            <div class="text-center mb-3">
+                <a href="{% url 'forgot_password' %}">Forgot Password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

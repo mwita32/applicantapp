@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+    .full-page {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('{% static "image/busary.jpeg" %}') no-repeat center center;
+        background-size: cover;
+    }
+</style>
+
+<div class="full-page">
+    <div class="card shadow-lg p-4 text-center" style="max-width: 400px; width: 100%; background: rgba(255, 255, 255, 0.9);">
+        <div class="text-center">
+            <img src="{% static 'image/mmustlogo.png' %}" alt="Logo" class="img-fluid mb-3" style="max-width: 150px;">
+        </div>
+        <h2 class="text-center">Sign in to your account</h2>
+
+        <!-- Display SweetAlert Messages -->
+        {% if messages %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    {% for message in messages %}
+                        let messageType = "{{ message.tags }}".includes("success") ? "success" : "error";
+                        let messageTitle = messageType === "success" ? "Success" : "Error";
+
+                        Swal.fire({
+                            title: messageTitle,
+                            text: "{{ message }}",
+                            icon: messageType,
+                            confirmButtonText: "OK"
+                        }).then(() => {
+                            if (messageType === "success") {
+                                window.location.href = "{% url 'homepage' %}";  // Redirect on success
+                            }
+                        });
+                    {% endfor %}
+                });
+            </script>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3 text-start">
+                <label for="username" class="form-label">Registration Number</label>
+                <input type="text" class="form-control" id="username" placeholder="APPLICANT-REGISTRATION-NUMBER" name="username" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="APPLICANT-ACCOUNT-PASSWORD" name="password" required>
+            </div>
+            <div class="text-center mb-3">
+                <a href="{% url 'admin_login' %}" class="mr-3">Admin Login</a>
+                <a href="{% url 'password_reset' %}">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <h4>Don't have an account?</h4>
+            <a href="{% url 'register' %}" class="btn btn-secondary w-100">Register</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
