@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load django_bootstrap5 %} <!-- Load Bootstrap 5 -->
-    {% bootstrap_css %}  <!-- Include Bootstrap CSS -->
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}MMUST Authentication{% endblock %}</title>
+
+    <style>
+        body {
+            padding-top: 70px; /* Ensures content does not hide under fixed navbar */
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Fixed Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">WELCOME TO MASINDE MULIRO RATANSI PORTAL </a>
+        <a class="navbar-brand fw-bold" href="#">WELCOME TO MASINDE MULIRO RATANSI PORTAL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,6 +27,7 @@
     </div>
 </nav>
 
+<!-- Content Container with Margin to Avoid Navbar Overlap -->
 <div class="container mt-4">
     {% if messages %}
         {% for message in messages %}
@@ -34,6 +42,6 @@
     {% endblock %}
 </div>
 
-{% bootstrap_javascript %}  <!-- Include Bootstrap JavaScript -->
+{% bootstrap_javascript %}
 </body>
 </html>

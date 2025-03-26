@@ -5,13 +5,13 @@ from django.contrib.auth import get_user_model
 User = get_user_model()  # Ensure it uses your custom user model
 
 class CustomUserAdmin(UserAdmin):
-    list_display = ('reg_number', 'email', 'full_name', 'is_active', 'is_staff', 'is_applicant')
-    search_fields = ('reg_number', 'email', 'full_name')
+    list_display = ('email', 'full_name', 'reg_number', 'is_active', 'is_staff', 'is_applicant')
+    search_fields = ('email', 'full_name', 'reg_number')
     list_filter = ('is_active', 'is_staff', 'is_applicant')
-    ordering = ('reg_number',)
+    ordering = ('email',)
 
     fieldsets = (
-        (None, {'fields': ('reg_number', 'email', 'full_name', 'password')}),
+        (None, {'fields': ('email', 'full_name', 'reg_number', 'password')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'is_applicant', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login',)}),
     )
@@ -19,7 +19,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('reg_number', 'email', 'full_name', 'password1', 'password2', 'is_active', 'is_staff', 'is_applicant'),
+            'fields': ('email', 'full_name', 'reg_number', 'password1', 'password2', 'is_active', 'is_staff', 'is_applicant'),
         }),
     )
 

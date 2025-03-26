@@ -11,18 +11,16 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv  #  Import dotenv to load environment variables
 
-
+# Load environment variables from a `.env` file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bvv3u!+1$py_-xspze2gt8w9j&o(uqp9g@j$qr1rv^qo52&ol4'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-bvv3u!+1$py_-xspze2gt8w9j&o(uqp9g@j$qr1rv^qo52&ol4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-# Other installed apps...
     "django_bootstrap5",
-
 ]
 
 MIDDLEWARE = [
@@ -77,8 +73,6 @@ WSGI_APPLICATION = 'authentication.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -87,15 +81,21 @@ DATABASES = {
         'PASSWORD': '',  # Replace with your MySQL password
         'HOST': '127.0.0.1',  # Localhost (WAMP Server)
         'PORT': '3306',  # Default MySQL Port
-'OPTIONS': {
+        'OPTIONS': {
             'charset': 'utf8mb4',
             'init_command': "SET SESSION innodb_strict_mode=OFF"
+        }
     }
 }
-}
+
+# Set Custom User Model
 AUTH_USER_MODEL = 'applicant.CustomUser'
 
-
+#  Allow applicants to log in using `reg_number` and staff to log in using `email`
+AUTHENTICATION_BACKENDS = [
+    'applicant.authentication_backends.CustomAuthBackend',  # Custom authentication backend
+    'django.contrib.auth.backends.ModelBackend',  # Default Django authentication for staff
+]
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -106,31 +106,24 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Email Configuration (For sending account-related emails)
+# Secure Email Configuration (For sending account-related emails)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'josephmanga504@gmail.com'
-EMAIL_HOST_PASSWORD = 'oaen rhzw vpmc xcfp'
+EMAIL_HOST_USER = 'josephmanga504@gmail.com'  # Replace with your email
+EMAIL_HOST_PASSWORD = 'oaen rhzw vpmc xcfp'  # Replace with your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'applicant', 'static')]
 
@@ -138,6 +131,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

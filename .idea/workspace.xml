@@ -4,36 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="439cf832-112d-4dbf-850a-b67dceba9234" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/authentication.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/busary.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/forgot.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/log.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/login.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/logo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/mmustlogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/register.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/reset.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/static/image/resetp.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/admin_login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/email_verification.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/forgot_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/homepage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_subject.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/applicant/urls.py" afterDir="false" />
+    <list default="true" id="439cf832-112d-4dbf-850a-b67dceba9234" name="Changes" comment="under development">
+      <change afterPath="$PROJECT_DIR$/authentication/applicant/authentication_backends.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/applicant/templates/admin_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/static/image/forgot.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/static/image/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/static/image/register.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/static/image/reset.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/static/image/resetp.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/admin_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/forgot_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/password_reset_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/applicant/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/applicant/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/authentication/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/authentication/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +37,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mwita32&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mwita32/applicantapp.git&quot;,
+    &quot;accountId&quot;: &quot;63f9a112-1232-4ed7-864b-665cd73dcedf&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -60,16 +69,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.authentication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Joseph mwita/PycharmProjects/authentication/authentication/applicant/static/image"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.authentication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Joseph mwita/PycharmProjects/authentication/authentication/applicant/static/image&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Joseph mwita\PycharmProjects\authentication\authentication\applicant\static\image" />
@@ -116,6 +125,27 @@
       <option name="presentableId" value="Default" />
       <updated>1742638215919</updated>
     </task>
+    <task id="LOCAL-00001" summary="under development">
+      <option name="closed" value="true" />
+      <created>1742733143496</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742733143496</updated>
+    </task>
+    <task id="LOCAL-00002" summary="under development">
+      <option name="closed" value="true" />
+      <created>1742733158467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742733158467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="under development" />
+    <option name="LAST_COMMIT_MESSAGE" value="under development" />
   </component>
 </project>
